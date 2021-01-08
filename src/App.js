@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import Slider from '@material-ui/core/Slider';
@@ -46,24 +45,25 @@ class App extends React.Component {
   }
 
   seatColour(seat) {
+    const styleObject = {};
     if (seat.displayMargin < -6) {
-      return { backgroundColor: '#f53661' };
-    } if (seat.displayMargin < 0) {
-      return { backgroundColor: '#fa84a0' };
-    } if (seat.displayMargin < 6 && seat.party === 'Nationals') {
-      return { backgroundColor: '#76b083' };
-    } if (seat.displayMargin < 6) {
-      return { backgroundColor: '#7f7fb5' };
-    } if (seat.displayMargin >= 6 && seat.party === 'Nationals') {
-      return { backgroundColor: '#448754' };
-    } if (seat.displayMargin >= 6) {
-      return { backgroundColor: '#4242a1' };
+      styleObject.backgroundColor = '#f53661';
+    } else if (seat.displayMargin < 0) {
+      styleObject.backgroundColor = '#fa84a0';
+    } else if (seat.displayMargin < 6 && seat.party === 'Nationals') {
+      styleObject.backgroundColor = '#76b083';
+    } else if (seat.displayMargin < 6) {
+      styleObject.backgroundColor = '#7f7fb5';
+    } else if (seat.displayMargin >= 6 && seat.party === 'Nationals') {
+      styleObject.backgroundColor = '#448754';
+    } else if (seat.displayMargin >= 6) {
+      styleObject.backgroundColor = '#4242a1';
     }
+    return styleObject;
   }
 
   render() {
-    const { seats } = this.state;
-    const { value } = this.state;
+    const { seats, value } = this.state;
     return (
       <div className={styles.container}>
         <h1 className={styles.title}>Swing calculator for 2021 WA election</h1>
