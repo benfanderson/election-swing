@@ -1,5 +1,7 @@
 const webpack = require('webpack');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -36,6 +38,11 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new ESLintPlugin(),
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: 'Swing calculator for 2021 WA election',
+      template: path.resolve(__dirname, './src/index.html'),
+    }),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, './dist'),
