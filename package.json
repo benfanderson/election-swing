@@ -1,7 +1,7 @@
 {
-  "name": "rexpack-prac",
+  "name": "election-swing",
   "version": "1.0.0",
-  "description": "",
+  "description": "Using React to show how a state-wide uniform swing at the 2021 WA election would affect the make-up of the Legislative Assembly.",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --config ./webpack.config.js --mode development",
@@ -9,7 +9,13 @@
     "build": "webpack --config ./webpack.config.js --mode production",
     "lint": "eslint --fix --ext .js,.jsx ."
   },
-  "author": "",
+  "keywords": [
+    "NPM",
+    "Javascript",
+    "Express",
+    "React"
+  ],
+  "author": "Ben Anderson",
   "license": "ISC",
   "babel": {
     "presets": [
