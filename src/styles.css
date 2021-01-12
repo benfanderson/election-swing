@@ -31,26 +31,22 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content:start;
+    
    }
+
+   /* .seatContainer::after{
+    content: '';
+    flex: auto;
+   } */
   
   .seatDiv {
-    width: 30%;
+    width: 33.33%;
+    margin-bottom: 2%;
   }
   
   .seatName {
-    height: 6.7vh;
-    font-size: 0.9em;
-  }
-  
-  .seatGraphic {
-    width: 100%;
-    height: 10vh;
-  }
-  
-  .marginInfo {
-    font-size: 0.9em;
-    margin-bottom: 5%;
+    height: auto;
   }
   
   /*View for tablet*/
@@ -62,11 +58,6 @@
     .seatDiv {
       width: 12%;
     }
-  
-    .seatName {
-      height: 5vh;
-    }
-  
   }
   
    /*View for Desktop*/
@@ -78,14 +69,8 @@
     .swingSlider {
       width: 90%
     }
-  
+    
     .seatDiv {
       width: 8%;
     }
-  
-    .seatName {
-      height: 5vh;
-    }
-  } 
-  
-  
+  }

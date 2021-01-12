@@ -4,13 +4,12 @@ import styles from './styles.css';
 
 const Seat = (props) => {
   const {
-    style, name, party, margin,
+    name, party, margin, style,
   } = props;
 
   return (
     <div className={styles.seatDiv}>
-      <p className={styles.seatName}><strong>{name}</strong></p>
-      <div className={styles.seatGraphic} style={style} />
+      <p className={styles.seatName} style={style}><strong>{name}</strong></p>
       <p className={styles.marginInfo}>
         {' '}
         {party}
