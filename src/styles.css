@@ -4,7 +4,12 @@
   }
 
   body {
-    background-color: #DFE6F3;
+    background-color: #dedee9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   }
   
   .container {
@@ -31,16 +36,6 @@
     width: 50%
   }
 
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  .sticky + .seatContainer {
-    padding-top: 102px;
-  }
-
   .seatContainer{
     display: grid;
     grid-template-columns: repeat(auto-fill, 29%);
@@ -49,14 +44,19 @@
    }
   
   .seatDiv {
-    width: 96%;
+    width: 90%;
     padding: 3%;
     margin-bottom: 2%;
     background-color: whitesmoke;
+    font-size: 0.85em;
   }
   
   .seatName {
     height: auto;
+  }
+
+  .marginInfo {
+    
   }
   
   /*View for tablet*/

@@ -4,18 +4,19 @@ import styles from './styles.css';
 
 const Seat = (props) => {
   const {
-    name, party, margin, style,
+    name, party, margin, colorStyle,
   } = props;
 
   return (
-    <div className={styles.seatDiv}>
-      <p className={styles.seatName} style={style}><strong>{name}</strong></p>
+    <div style={colorStyle} className={styles.seatDiv}>
+      <p className={styles.seatName}><strong>{name}</strong></p>
       <p className={styles.marginInfo}>
         {' '}
         {party}
         {' '}
         {margin}
-        % margin
+        %
+        {/* margin */}
       </p>
     </div>
   );
@@ -25,7 +26,7 @@ Seat.propTypes = {
   name: PropTypes.string.isRequired,
   party: PropTypes.string.isRequired,
   margin: PropTypes.number.isRequired,
-  style: PropTypes.func.isRequired,
+  colorStyle: PropTypes.func.isRequired,
 };
 
 export default Seat;
