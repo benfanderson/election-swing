@@ -8,8 +8,8 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   .container {
@@ -55,10 +55,6 @@
     height: auto;
   }
 
-  .marginInfo {
-    
-  }
-  
   /*View for tablet*/
   @media only screen and (min-width: 479px) {
     .swingSlider {
@@ -66,12 +62,16 @@
     }
 
     .seatContainer {
-      grid-template-columns: repeat(auto-fill, 12%);
+      grid-template-columns: repeat(auto-fill, 18%);
+    }
+
+    .seatName {
+      font-size: 1em;
     }
   
-    /* .seatDiv {
-      width: 100%;
-    } */
+    .marginInfo {
+      font-size: .9em;
+    }
   }
   
    /*View for Desktop*/
