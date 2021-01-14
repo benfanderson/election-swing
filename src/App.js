@@ -1,6 +1,7 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import Slider from '@material-ui/core/Slider';
+import { StickyContainer, Sticky } from 'react-sticky';
 import styles from './styles.css';
 import Seat from './Seat';
 import seatsArray from './seatsArray';
@@ -75,38 +76,44 @@ class App extends React.Component {
     return (
       <div className={styles.container}>
         <h1 className={styles.title}>Swing calculator for 2021 WA election</h1>
-        <div className={styles.swingSliderContainer}>
-          <div> Labor &#9756; </div>
-          <div className={styles.swingSlider}>
-            <Slider
-              defaultValue={value}
-              valueLabelFormat={(x) => Math.abs(x)}
-              getAriaValueText={valuetext}
-              aria-labelledby="range-slider"
-              valueLabelDisplay="auto"
-              onChange={this.handleChange}
-              step={0.5}
-              marks
-              min={-10}
-              max={10}
-            />
-          </div>
-          <div> &#9758; Libs/Nats </div>
-        </div>
-        <div className={styles.seatContainer}>
-          {seats.map(
-            (seat, index) => (
-              <Seat
-                name={seat.name}
-                margin={Math.abs(seat.displayMargin)}
-                party={seat.party}
-                colorStyle={this.partyColour(seat)}
+        <StickyContainer>
+          <Sticky>
+            {({ style }) => (
+              <div style={style} className={styles.swingSliderContainer}>
+                <div> Labor &#9756; </div>
+                <div className={styles.swingSlider}>
+                  <Slider
+                    defaultValue={value}
+                    valueLabelFormat={(x) => Math.abs(x)}
+                    getAriaValueText={valuetext}
+                    aria-labelledby="range-slider"
+                    valueLabelDisplay="auto"
+                    onChange={this.handleChange}
+                    step={0.5}
+                    marks
+                    min={-10}
+                    max={10}
+                  />
+                </div>
+                <div> &#9758; Libs/Nats </div>
+              </div>
+            )}
+          </Sticky>
+          <div className={styles.seatContainer}>
+            {seats.map(
+              (seat, index) => (
+                <Seat
+                  name={seat.name}
+                  margin={Math.abs(seat.displayMargin)}
+                  party={seat.party}
+                  colorStyle={this.partyColour(seat)}
                 // eslint-disable-next-line react/no-array-index-key
-                key={index}
-              />
-            ),
-          )}
-        </div>
+                  key={index}
+                />
+              ),
+            )}
+          </div>
+        </StickyContainer>
       </div>
 
     );
