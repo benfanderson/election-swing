@@ -1,10 +1,11 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
-import Slider from '@material-ui/core/Slider';
+// import Slider from '@material-ui/core/Slider';
 import { StickyContainer, Sticky } from 'react-sticky';
 import styles from './styles.css';
 import Seat from './Seat';
 import seatsArray from './seatsArray';
+import SwingSlider from './SwingSlider';
 
 const stateArray = seatsArray.sort((a, b) => (
   (a.margin > b.margin) ? 1 : ((b.margin > a.margin) ? -1 : 0)
@@ -79,24 +80,32 @@ class App extends React.Component {
         <StickyContainer>
           <Sticky>
             {({ style }) => (
-              <div style={style} className={styles.swingSliderContainer}>
-                <div> Labor &#9756; </div>
-                <div className={styles.swingSlider}>
-                  <Slider
-                    defaultValue={value}
-                    valueLabelFormat={(x) => Math.abs(x)}
-                    getAriaValueText={valuetext}
-                    aria-labelledby="range-slider"
-                    valueLabelDisplay="auto"
-                    onChange={this.handleChange}
-                    step={0.5}
-                    marks
-                    min={-10}
-                    max={10}
-                  />
-                </div>
-                <div> &#9758; Libs/Nats </div>
+              <div style={style}>
+                <SwingSlider
+                  style={style}
+                  value={value}
+                  valuetext={valuetext}
+                  onChange={this.handleChange}
+                />
               </div>
+              // <div style={style} className={styles.swingSliderContainer}>
+              //   <div> Labor &#9756; </div>
+              //   <div className={styles.swingSlider}>
+              //     <Slider
+              //       defaultValue={value}
+              //       valueLabelFormat={(x) => Math.abs(x)}
+              //       getAriaValueText={valuetext}
+              //       aria-labelledby="range-slider"
+              //       valueLabelDisplay="auto"
+              //       onChange={this.handleChange}
+              //       step={0.5}
+              //       marks
+              //       min={-10}
+              //       max={10}
+              //     />
+              //   </div>
+              //   <div> &#9758; Libs/Nats </div>
+              // </div>
             )}
           </Sticky>
           <div className={styles.seatContainer}>
