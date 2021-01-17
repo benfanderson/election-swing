@@ -1,6 +1,5 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
-// import Slider from '@material-ui/core/Slider';
 import { StickyContainer, Sticky } from 'react-sticky';
 import styles from './styles.css';
 import Seat from './Seat';
@@ -50,22 +49,16 @@ class App extends React.Component {
     const styleObject = {};
     let borderColor;
     if (seat.displayMargin < -6) {
-      // styleObject.color = '#f53661';
       borderColor = '#f53661';
     } else if (seat.displayMargin < 0) {
-      // styleObject.color = '#fa84a0';
       borderColor = '#fa84a0';
     } else if (seat.displayMargin < 6 && seat.party === 'Nationals') {
-      // styleObject.color = '#76b083';
       borderColor = '#76b083';
     } else if (seat.displayMargin < 6) {
-      // styleObject.color = '#7f7fb5';
       borderColor = '#7f7fb5';
     } else if (seat.displayMargin >= 6 && seat.party === 'Nationals') {
-      // styleObject.color = '#448754';
       borderColor = '#448754';
     } else if (seat.displayMargin >= 6) {
-      // styleObject.color = '#4242a1';
       borderColor = '#4242a1';
     }
     styleObject.border = `2.5px solid ${borderColor}`;
@@ -88,24 +81,6 @@ class App extends React.Component {
                   onChange={this.handleChange}
                 />
               </div>
-              // <div style={style} className={styles.swingSliderContainer}>
-              //   <div> Labor &#9756; </div>
-              //   <div className={styles.swingSlider}>
-              //     <Slider
-              //       defaultValue={value}
-              //       valueLabelFormat={(x) => Math.abs(x)}
-              //       getAriaValueText={valuetext}
-              //       aria-labelledby="range-slider"
-              //       valueLabelDisplay="auto"
-              //       onChange={this.handleChange}
-              //       step={0.5}
-              //       marks
-              //       min={-10}
-              //       max={10}
-              //     />
-              //   </div>
-              //   <div> &#9758; Libs/Nats </div>
-              // </div>
             )}
           </Sticky>
           <div className={styles.seatContainer}>
