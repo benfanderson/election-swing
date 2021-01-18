@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from '@material-ui/core/Slider';
-import styles from './styles.css';
+import styles from '../styles.css';
 
 const SwingSlider = (props) => {
   const {

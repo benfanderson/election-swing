@@ -1,9 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import React from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
-import styles from './styles.css';
+import styles from '../styles.css';
 import Seat from './Seat';
-import seatsArray from './seatsArray';
+import seatsArray from '../seatsArray';
 import SwingSlider from './SwingSlider';
 
 const stateArray = seatsArray.sort((a, b) => (
