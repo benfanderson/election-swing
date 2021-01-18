@@ -16,7 +16,6 @@ const Seat = (props) => {
         {' '}
         {margin}
         %
-        {/* margin */}
       </p>
     </div>
   );
@@ -26,7 +25,8 @@ Seat.propTypes = {
   name: PropTypes.string.isRequired,
   party: PropTypes.string.isRequired,
   margin: PropTypes.number.isRequired,
-  colorStyle: PropTypes.func.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  colorStyle: PropTypes.object.isRequired,
 };
 
 export default Seat;
