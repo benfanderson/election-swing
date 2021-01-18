@@ -5,14 +5,14 @@ import styles from './styles.css';
 
 const SwingSlider = (props) => {
   const {
-    value, onChange, valuetext,
+    onChange, valuetext,
   } = props;
   return (
     <div className={styles.swingSliderContainer}>
       <div> Labor &#9756; </div>
       <div className={styles.swingSlider}>
         <Slider
-          defaultValue={value}
+          defaultValue={0}
           valueLabelFormat={(x) => Math.abs(x)}
           getAriaValueText={valuetext}
           aria-labelledby="range-slider"
@@ -30,7 +30,6 @@ const SwingSlider = (props) => {
 };
 
 SwingSlider.propTypes = {
-  value: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
   valuetext: PropTypes.func.isRequired,
 };
