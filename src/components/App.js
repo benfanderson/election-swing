@@ -1,32 +1,24 @@
-/* eslint-disable class-methods-use-this */
-import React from 'react';
+import React, { useState } from 'react';
 import { StickyContainer, Sticky } from 'react-sticky';
 import styles from '../styles.css';
-import Seat from './Seat';
 import seatsArray from '../seatsArray';
+import Seat from './Seat';
 import SwingSlider from './SwingSlider';
 
 const stateArray = seatsArray.sort((a, b) => (
   (a.margin > b.margin) ? 1 : ((b.margin > a.margin) ? -1 : 0)
 ));
 
-function valuetext(value) {
-  return { value };
-}
+function App() {
+  const [seats, setSeats] = useState(stateArray);
+  // eslint-disable-next-line no-unused-vars
+  const [swing, setSwing] = useState(0);
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      seats: stateArray,
-      value: 0,
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+  const valuetext = (value) => value;
 
-  handleChange(event, value) {
-    const { seats } = this.state;
+  const handleChange = (evt, value) => {
     const updatedSeats = seats;
+    setSwing(value);
     updatedSeats.forEach(
       (seat) => {
         seat.displayMargin = (parseFloat(seat.margin) + parseFloat(value)).toFixed(2);
@@ -39,13 +31,10 @@ class App extends React.Component {
         }
       },
     );
-    this.setState({
-      value: event.target.value,
-      seats: updatedSeats,
-    });
-  }
+    setSeats(updatedSeats);
+  };
 
-  partyColour(seat) {
+  const partyColour = (seat) => {
     const styleObject = {};
     let borderColor;
     if (seat.displayMargin < -6) {
@@ -63,45 +52,40 @@ class App extends React.Component {
     }
     styleObject.border = `2.5px solid ${borderColor}`;
     return styleObject;
-  }
+  };
+  return (
+    <div className={styles.container}>
+      <h1 className={styles.title}>Swing calculator for 2021 WA election</h1>
+      <StickyContainer>
+        <Sticky>
+          {({ style }) => (
+            <div style={style}>
+              <SwingSlider
+                style={style}
+                valuetext={valuetext}
+                onChange={handleChange}
+              />
+            </div>
+          )}
+        </Sticky>
+        <div className={styles.seatContainer}>
+          {seats.map(
+            (seat, index) => (
+              <Seat
+                name={seat.name}
+                margin={Math.abs(seat.displayMargin)}
+                party={seat.party}
+                colorStyle={partyColour(seat)}
+              // eslint-disable-next-line react/no-array-index-key
+                key={index}
+              />
+            ),
+          )}
+        </div>
+      </StickyContainer>
+    </div>
 
-  render() {
-    const { seats, value } = this.state;
-    return (
-      <div className={styles.container}>
-        <h1 className={styles.title}>Swing calculator for 2021 WA election</h1>
-        <StickyContainer>
-          <Sticky>
-            {({ style }) => (
-              <div style={style}>
-                <SwingSlider
-                  style={style}
-                  value={value}
-                  valuetext={valuetext}
-                  onChange={this.handleChange}
-                />
-              </div>
-            )}
-          </Sticky>
-          <div className={styles.seatContainer}>
-            {seats.map(
-              (seat, index) => (
-                <Seat
-                  name={seat.name}
-                  margin={Math.abs(seat.displayMargin)}
-                  party={seat.party}
-                  colorStyle={this.partyColour(seat)}
-                // eslint-disable-next-line react/no-array-index-key
-                  key={index}
-                />
-              ),
-            )}
-          </div>
-        </StickyContainer>
-      </div>
-
-    );
-  }
+  );
 }
 
 export default App;
