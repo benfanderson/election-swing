@@ -3,10 +3,8 @@ import ReactDOM from 'react-dom';
 
 import App from './components/App';
 
-const title = 'Hot Dog';
-
 ReactDOM.render(
-  <App title={title} />,
+  <App />,
   document.getElementById('root'),
 );
 
