@@ -11,12 +11,11 @@ const stateArray = seatsArray.sort((a, b) => (
 
 function App() {
   const [seats, setSeats] = useState(stateArray);
-  // eslint-disable-next-line no-unused-vars
-  const [swing, setSwing] = useState(0);
+  const [, setSwing] = useState(0);
 
   const valuetext = (value) => value;
 
-  const handleChange = (evt, value) => {
+  const handleChange = (_evt, value) => {
     const updatedSeats = seats;
     setSwing(value);
     updatedSeats.forEach(
