@@ -18,7 +18,6 @@ function App() {
   const handleChange = (_evt, value) => {
     const updatedSeats = seats;
     setSwing(value);
-    console.log(value);
     updatedSeats.forEach(
       (seat) => {
         seat.displayMargin = (parseFloat(seat.margin) + parseFloat(value)).toFixed(2);
