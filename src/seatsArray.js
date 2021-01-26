@@ -75,7 +75,7 @@ const seatsArray = [
     name: 'Carine',
     margin: 9.05,
     displayMargin: 9.05,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Central Wheatbelt',
@@ -87,7 +87,7 @@ const seatsArray = [
     name: 'Churchlands',
     margin: 13.22,
     displayMargin: 13.22,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Cockburn',
@@ -117,7 +117,7 @@ const seatsArray = [
     name: 'Darling Range',
     margin: 7,
     displayMargin: 7,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Forrestfield',
@@ -147,7 +147,7 @@ const seatsArray = [
     name: 'Hillarys',
     margin: 4.09,
     displayMargin: 4.09,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Jandakot',
@@ -171,7 +171,7 @@ const seatsArray = [
     name: 'Kalgoorlie',
     margin: 6.18,
     displayMargin: 6.18,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Kimberley',
@@ -243,7 +243,7 @@ const seatsArray = [
     name: 'Nedlands',
     margin: 8.28,
     displayMargin: 8.28,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'North West Central',
@@ -267,7 +267,7 @@ const seatsArray = [
     name: 'Riverton',
     margin: 4.36,
     displayMargin: 4.36,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Roe',
@@ -291,7 +291,7 @@ const seatsArray = [
     name: 'South Perth',
     margin: 7.15,
     displayMargin: 7.15,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Southern River',
@@ -315,7 +315,7 @@ const seatsArray = [
     name: 'Vasse',
     margin: 14.69,
     displayMargin: 14.69,
-    party: 'Liberals',
+    party: 'Liberal',
   },
   {
     name: 'Victoria Park',
