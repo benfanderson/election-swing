@@ -56,6 +56,10 @@ function App() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Swing calculator for 2021 WA election</h1>
+      <p className={styles.blurb}>
+        Move the slider towards Labor or Liberal/Nationals
+        to see the effect of a state-wide uniform election swing
+      </p>
       <StickyContainer>
         <Sticky>
           {({ style }) => (
