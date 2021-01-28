@@ -17,7 +17,6 @@ function App() {
 
   const handleChange = (_evt, value) => {
     const updatedSeats = seats;
-    setSwing(value);
     updatedSeats.forEach(
       (seat) => {
         seat.displayMargin = (parseFloat(seat.margin) + parseFloat(value)).toFixed(2);
@@ -31,6 +30,7 @@ function App() {
       },
     );
     setSeats(updatedSeats);
+    setSwing(value);
   };
 
   const partyColour = (seat) => {
@@ -52,6 +52,7 @@ function App() {
     styleObject.border = `2.5px solid ${borderColor}`;
     return styleObject;
   };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Swing calculator for 2021 WA election</h1>
@@ -75,7 +76,7 @@ function App() {
                 margin={Math.abs(seat.displayMargin)}
                 party={seat.party}
                 colorStyle={partyColour(seat)}
-              // eslint-disable-next-line react/no-array-index-key
+                // eslint-disable-next-line react/no-array-index-key
                 key={index}
               />
             ),
@@ -83,7 +84,6 @@ function App() {
         </div>
       </StickyContainer>
     </div>
-
   );
 }
 
